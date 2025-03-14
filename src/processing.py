@@ -1,8 +1,7 @@
 # Создание функций проекта
-from typing import Any, List
+from typing import List
 
-
-def filter_by_state(my_list: List[Any], state: str = 'EXECUTED') -> List[Any]:
+def filter_by_state(my_list: List[dict], state: str = 'EXECUTED') -> List[dict]:
     """
     Функция фильтрации списков словарей по ключу
     """
@@ -12,11 +11,11 @@ def filter_by_state(my_list: List[Any], state: str = 'EXECUTED') -> List[Any]:
 # {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'},
 # {'id': 594226727, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'},
 # {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}])
-
+#
 # print(result_1)
 
 
-def sort_by_date(my_list: List[Any], reversed_sorted: bool = True) -> List[Any]:
+def sort_by_date(my_list: List[dict], reversed_sorted: bool = True) -> List[dict]:
     """
     Функция сортировки даты по ключу
     """
@@ -26,5 +25,5 @@ def sort_by_date(my_list: List[Any], reversed_sorted: bool = True) -> List[Any]:
 # {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'},
 # {'id': 594226727, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'},
 # {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}])
-
+#
 # print(result_2)
