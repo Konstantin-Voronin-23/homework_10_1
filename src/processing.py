@@ -16,11 +16,11 @@ def filter_by_state(my_list: List[Any], state: str = 'EXECUTED') -> List[Any]:
 # print(result_1)
 
 
-def sort_by_date(my_list: List[Any], reverse_def: bool = True) -> List[Any]:
+def sort_by_date(my_list: List[Any], reversed_sorted: bool = True) -> List[Any]:
     """
     Функция сортировки даты по ключу
     """
-    return sorted(my_list, key=lambda date: date.get("date", 0), reverse=reverse_def)
+    return sorted(my_list, key=lambda date: date.get("date", 0), reverse=reversed_sorted)
 
 # result_2 = sort_by_date([{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
 # {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'},
