@@ -1,7 +1,5 @@
-from typing import Union
 
-
-def mask_account_card(card: Union[str]) -> Union[str]:
+def mask_account_card(card: str) -> str:
     """ Функция для отображения номеров карт и счета"""
 
     card_split = card.split()
@@ -21,6 +19,6 @@ def mask_account_card(card: Union[str]) -> Union[str]:
     return "Некорретный номер!!!"
 
 
-def get_date(date: Union[str]) -> Union[str]:
+def get_date(date: str) -> str:
     """ Функция изменения формата даты"""
     return f"{date[8:10]}.{date[5:7]}.{date[:4]}"
