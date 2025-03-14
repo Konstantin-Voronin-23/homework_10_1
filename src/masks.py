@@ -1,7 +1,7 @@
 from typing import Union
 
 
-def get_mask_card_number(user_card: Union[int, str]) -> Union[str, None]:
+def get_mask_card_number(user_card: str) -> str:
     """
     Функция маскировки номера банковской карты
     """

@@ -1,8 +1,7 @@
 # Создание функций проекта
-from typing import Any, List
+from typing import List
 
-
-def filter_by_state(my_list: List[Any], state: str = 'EXECUTED') -> List[Any]:
+def filter_by_state(my_list: List[dict], state: str = 'EXECUTED') -> List[dict]:
     """
     Функция фильтрации списков словарей по ключу
     """
@@ -16,7 +15,7 @@ def filter_by_state(my_list: List[Any], state: str = 'EXECUTED') -> List[Any]:
 # print(result_1)
 
 
-def sort_by_date(my_list: List[Any], reversed_sorted: bool = True) -> List[Any]:
+def sort_by_date(my_list: List[dict], reversed_sorted: bool = True) -> List[dict]:
     """
     Функция сортировки даты по ключу
     """
