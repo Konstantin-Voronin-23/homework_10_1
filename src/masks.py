@@ -1,7 +1,7 @@
-from typing import Union
+from typing import Any, Dict, Optional, Union
 
 
-def get_mask_card_number(user_card: str) -> Union[str, None]:
+def get_mask_card_number(user_card: Optional[str]) -> Union[str, None]:
     """
     Функция маскировки номера банковской карты
     """
@@ -13,7 +13,7 @@ def get_mask_card_number(user_card: str) -> Union[str, None]:
     return None
 
 
-def get_mask_account(user_account: Union[int, str]) -> Union[str, None]:
+def get_mask_account(user_account: Union[str, int, None, list, Dict[Any, Any], float]) -> Union[str, None]:
     """
     Функция маскировки номера банковского счета
     """

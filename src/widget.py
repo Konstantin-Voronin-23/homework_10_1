@@ -1,4 +1,5 @@
-import re
+from datetime import datetime
+
 
 def mask_account_card(card: str) -> str:
     """ Функция для отображения номеров карт и счета"""
@@ -9,7 +10,7 @@ def mask_account_card(card: str) -> str:
         return "Некорретный номер!!!"
 
     card_and_account_type = ' '.join(card_split[:-1])
-    card_and_account_number = card_split[-1].replace(" ","")
+    card_and_account_number = card_split[-1].replace(" ", "")
     card_len = 16
     account_len = 20
 
@@ -28,12 +29,11 @@ def mask_account_card(card: str) -> str:
     return "Некорретный номер!!!"
 
 
-res = mask_account_card("Visa 12345678abcd3456")
-print(res)
-
 def get_date(date: str) -> str:
-    """ Функция изменения формата даты"""
-    if len(date) < 10 or not re.match(r'^\d{4}[-/]\d{2}-\d{2}$', date):
-        raise IndexError("Недостаточно символов")
-    return f"{date[8:10]}.{date[5:7]}.{date[:4]}"
+    """Функция изменения формата даты"""
+    try:
+        date_obj = datetime.strptime(date, "%Y-%m-%d")
+    except ValueError:
+        raise ValueError("Неверный формат даты. Ожидается формат YYYY-MM-DD.")
 
+    return date_obj.strftime("%d.%m.%Y")
