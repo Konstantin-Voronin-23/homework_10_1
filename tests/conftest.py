@@ -117,3 +117,106 @@ def datatime_basic() -> List[dict[str, Union[str, int]]]:
         {'id': 4, 'date': '2023-08-25'},
         {'id': 5, 'date': '2023-09-20'},
     ]
+
+
+@pytest.fixture
+def currency_basic() -> list[dict]:
+    return [
+        {
+            "id": 939719570,
+            "state": "EXECUTED",
+            "date": "2018-06-30T02:08:58.425572",
+            "operationAmount": {
+                "amount": "9824.07",
+                "currency": {
+                    "name": "USD",
+                    "code": "USD"
+                }
+            },
+            "description": "Перевод организации",
+            "from": "Счет 75106830613657916952",
+            "to": "Счет 11776614605963066702"
+        },
+        {
+            "id": 142264268,
+            "state": "EXECUTED",
+            "date": "2019-04-04T23:20:05.206878",
+            "operationAmount": {
+                "amount": "79114.93",
+                "currency": {
+                    "name": "USD",
+                    "code": "USD"
+                }
+            },
+            "description": "Перевод со счета на счет",
+            "from": "Счет 19708645243227258542",
+            "to": "Счет 75651667383060284188"
+        }
+        ]
+
+
+
+@pytest.fixture
+def currency_average() -> list[dict]:
+    return [
+        {
+            "id": 939719570,
+            "state": "EXECUTED",
+            "date": "2018-06-30T02:08:58.425572",
+            "operationAmount": {
+                "amount": "9824.07",
+                "currency": {
+                    "name": "USD",
+                    "code": "USD"
+                }
+            },
+            "description": "Перевод организации",
+            "from": "Счет 75106830613657916952",
+            "to": "Счет 11776614605963066702"
+        },
+        {
+            "id": 142264268,
+            "state": "EXECUTED",
+            "date": "2019-04-04T23:20:05.206878",
+            "operationAmount": {
+                "amount": "79114.93",
+                "currency": {
+                    "name": "USD",
+                    "code": "USD"
+                }
+            },
+            "description": "Перевод со счета на счет",
+            "from": "Счет 19708645243227258542",
+            "to": "Счет 75651667383060284188"
+        },
+        {
+            "id": 123456789,
+            "state": "EXECUTED",
+            "date": "2023-05-15T14:22:10.123456",
+            "operationAmount": {
+                "amount": "15000.50",
+                "currency": {
+                    "name": "EUR",
+                    "code": "EUR"
+                }
+            },
+            "description": "Перевод с карты на карту",
+            "from": "Visa Platinum 1234 5678 9012 3456",
+            "to": "MasterCard 9876 5432 1098 7654"
+        },
+        {
+            "id": 987654321,
+            "state": "CANCELED",
+            "date": "2022-11-30T09:45:33.789012",
+            "operationAmount": {
+                "amount": "500.00",
+                "currency": {
+                    "name": "RUB",
+                    "code": "RUB"
+                }
+            },
+            "description": "Оплата услуг",
+            "from": "Счет 12345678901234567890",
+            "to": "Счет 98765432109876543210"
+        }
+    ]

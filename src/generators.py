@@ -17,17 +17,16 @@ for _ in range(2):
         break
 
 
-def transaction_descriptions(transactions_gen: list[dict]) -> Iterator[str]:
+def transaction_descriptions(transactions: list[dict]) -> Iterator[str]:
     """Функция для генератора списков, которая принимает на вход список словарей и возвращает описание каждой
     операции по очереди"""
 
-    for transaction in transactions_gen:
-        if "description" in transaction:
-            yield transaction["description"]
+    for transaction in transactions:
+        yield transaction.get("description")
 
 
-transactions_gen = []
-descriptions = transaction_descriptions(transactions_gen)
+transactions = []
+descriptions = transaction_descriptions(transactions)
 
 for _ in range(5):
     try:
@@ -40,6 +39,8 @@ for _ in range(5):
 def card_number_generator(start: int, end: int) -> int:
     """Функция для генератора номеров банковских карт, который принимает на вход начальное и конечное значение
     карт в формате XXXX XXXX XXXX XXXX, где X— цифра номера карты и возвращает номера корт"""
+    if start > end:
+        raise ValueError("Стартовое значение не может быть больше конечного")
 
     for num in range(start, end + 1):
         full_number_card_gen = f"{num:016d}"
