@@ -1,14 +1,15 @@
-from typing import Iterator, Any
+from typing import Any, Generator, Iterator
 
 
-def filter_by_currency(transactions: list[dict[Any]], currency: str="USD") -> list[dict]:
+def filter_by_currency(transactions: list[dict[str, Any]], currency: str = "USD") -> Iterator[dict[str, Any]]:
     """Функция перебора списка словарей, она принимает на вход список словарей и возвращает,
     итератор который выдает транзакции если они соответствуют заданной валюте"""
 
-    return [x for x in transactions if x.get("operationAmount", {}).get("currency", {}).get("name") == currency]
+    return (x for x in transactions if x.get("operationAmount", {}).get("currency", {}).get("name") == currency)
 
-transactions = []
-usd_transactions = iter(filter_by_currency(transactions, "USD"))
+
+transactions_one: list[dict[str, Any]] = []
+usd_transactions = iter(filter_by_currency(transactions_one, "USD"))
 for _ in range(2):
     try:
         print(next(usd_transactions))
@@ -17,16 +18,18 @@ for _ in range(2):
         break
 
 
-def transaction_descriptions(transactions: list[dict]) -> Iterator[str]:
+def transaction_descriptions(transactions: list[dict[str, Any]]) -> Iterator[str]:
     """Функция для генератора списков, которая принимает на вход список словарей и возвращает описание каждой
     операции по очереди"""
 
     for transaction in transactions:
-        yield transaction.get("description")
+        description = transaction.get("description")
+        if description is not None:
+            yield description
 
 
-transactions = []
-descriptions = transaction_descriptions(transactions)
+transactions_two: list[dict[str, Any]] = []
+descriptions = transaction_descriptions(transactions_two)
 
 for _ in range(5):
     try:
@@ -36,7 +39,7 @@ for _ in range(5):
         break
 
 
-def card_number_generator(start: int, end: int) -> int:
+def card_number_generator(start: int, end: int) -> Generator[str, None, None]:
     """Функция для генератора номеров банковских карт, который принимает на вход начальное и конечное значение
     карт в формате XXXX XXXX XXXX XXXX, где X— цифра номера карты и возвращает номера корт"""
     if start > end:
@@ -49,6 +52,7 @@ def card_number_generator(start: int, end: int) -> int:
         part3 = full_number_card_gen[8:12]
         part4 = full_number_card_gen[12:16]
         yield f"{part1} {part2} {part3} {part4}"
+
 
 for card in card_number_generator(1, 10):
     print(card)

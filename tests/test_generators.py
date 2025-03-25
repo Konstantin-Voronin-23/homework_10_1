@@ -1,16 +1,16 @@
+from typing import Any, Dict, List
+
 import pytest
 
-from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
-
-from typing import Iterator, Any
+from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 # Тесты для функции filter_by_currency
 
 
-def test_filter_by_currency_valid(currency_basic: list[dict[Any]], currency: str="USD") -> None:
+def test_filter_by_currency_valid(currency_basic: List[Dict[str, Any]], currency: str = "USD") -> None:
     """Тест проверяющий, что функция корректно фильтрует транзакции по заданной валюте"""
 
-    result = filter_by_currency(currency_basic, "USD")
+    result = list(filter_by_currency(currency_basic, "USD"))  # Преобразуем итератор в список
     assert result == currency_basic
 
 
@@ -20,22 +20,22 @@ def test_filter_by_currency_valid(currency_basic: list[dict[Any]], currency: str
     ("EUR", 1),
     ("WON", 0)
 ])
-def test_filter_by_currency_invalid(currency_average: list[dict[Any]], currency: str, expected: int) -> None:
+def test_filter_by_currency_invalid(currency_average: List[Dict[str, Any]], currency: str, expected: int) -> None:
     """Тест проверяющий, что функция корректно обрабатывает случаи когда не транзакции в заданной валюте
     отсутствуют"""
 
-    result = filter_by_currency(currency_average, currency)
+    result = list(filter_by_currency(currency_average, currency))
     assert len(result) == expected
 
 
 def test_filter_by_currency_empty() -> None:
     """Тест проверяющий, что функция корректно обрабатывает случаи когда на вход приходит пустой список"""
-    assert filter_by_currency([], "USD") == []
+    assert list(filter_by_currency([], "USD")) == []
 
 
 # Тесты для функции transaction_descriptions
 
-def test_transaction_descriptions_valid(currency_average: list[dict[Any]]) -> None:
+def test_transaction_descriptions_valid(currency_average: List[Dict[str, Any]]) -> None:
     """Тест проверяющий, что функция возвращает корректные описания для каждой транзакции"""
 
     expected_str = ["Перевод организации", "Перевод со счета на счет", "Перевод с карты на карту", "Оплата услуг"]
@@ -44,12 +44,10 @@ def test_transaction_descriptions_valid(currency_average: list[dict[Any]]) -> No
 
 
 @pytest.mark.parametrize("expected_description", [
-    ["Перевод организации",
-      "Перевод со счета на счет",
-      "Перевод с карты на карту",
-      "Оплата услуг"]
+    ["Перевод организации", "Перевод со счета на счет",
+     "Перевод с карты на карту", "Оплата услуг"]
 ])
-def test_transaction_descriptions(currency_average: list[dict[Any]], expected_description: list[str]) -> None:
+def test_transaction_descriptions(currency_average: List[dict[str, Any]], expected_description: List[str]) -> None:
     """Тест проверяющий работу функции генератора с различными входными данными"""
 
     generator = transaction_descriptions(currency_average)
@@ -93,4 +91,3 @@ def test_card_number_generator_invalid_range() -> None:
     """Тест проверяющий невалидный диапазон значения карты"""
     with pytest.raises(ValueError):
         list(card_number_generator(5, 1))
-
