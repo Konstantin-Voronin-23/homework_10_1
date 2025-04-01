@@ -1,13 +1,17 @@
 from loguru import logger
 from functools import wraps
+from typing import TypeVar, Callable, Any, cast
 
-def log(filename=None):
+F = TypeVar("F", bound=Callable[..., Any])
+
+def log(filename: str | None=None) -> Callable[[F],F]:
     if filename:
         logger.remove()
         logger.add(filename)
-    def decotator(func):
+    def decotator(func: F) -> F:
         @wraps(func)
-        def wrapper(*args, **kwargs):
+        def wrapper(*args: Any, **kwargs: Any) -> Any:
+            """"""
             try:
                 logger.info(f"{func.__name__} | {args} | {kwargs}")
                 result = func(*args, **kwargs)
@@ -16,9 +20,10 @@ def log(filename=None):
             except Exception as error:
                 logger.error(f"{func.__name__} error: | {type(error).__name__} Inputs: {args} {kwargs}")
                 raise
-        return wrapper
+        return cast(F, wrapper)
     return decotator
 
 @log("logs.txt")
-def my_function(x, y):
+def my_function(x: int, y: int) -> Any:
+    """Функция принимает на вход числа x и y, и проводит с ними операцию деления, отправляя на выход результат или ошибку"""
     return x / y
