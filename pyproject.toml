@@ -24,6 +24,7 @@ isort = "^6.0.0"
 requests = "^2.32.3"
 pytest = "^8.3.5"
 pytest-cov = "^6.0.0"
+logging = "^0.4.9.6"
 
 [tool.mypy]
 disallow_untyped_defs = true
