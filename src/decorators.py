@@ -8,7 +8,7 @@ def log(filename: str | None=None) -> Callable[[F],F]:
     if filename:
         logger.remove()
         logger.add(filename)
-    def decotator(func: F) -> F:
+    def decorator(func: F) -> F:
         @wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> Any:
             """"""
@@ -21,7 +21,7 @@ def log(filename: str | None=None) -> Callable[[F],F]:
                 logger.error(f"{func.__name__} error: | {type(error).__name__} Inputs: {args} {kwargs}")
                 raise
         return cast(F, wrapper)
-    return decotator
+    return decorator
 
 @log("logs.txt")
 def my_function(x: int, y: int) -> Any:

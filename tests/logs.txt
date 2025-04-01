@@ -1,0 +1,88 @@
+2025-04-01 18:38:38.445 | INFO     | src.decorators:wrapper:16 - my_function | (100, 50) | {}
+2025-04-01 18:38:38.445 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 18:39:46.852 | INFO     | src.decorators:wrapper:16 - my_function | (100, 50) | {}
+2025-04-01 18:39:46.852 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 18:39:46.852 | INFO     | src.decorators:wrapper:16 - my_function | (228, 228) | {}
+2025-04-01 18:39:46.852 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 18:47:13.802 | INFO     | src.decorators:wrapper:16 - my_function | (100, 50) | {}
+2025-04-01 18:47:13.802 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 18:47:13.802 | INFO     | src.decorators:wrapper:16 - my_function | (228, 228) | {}
+2025-04-01 18:47:13.802 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 18:47:13.802 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 18:47:13.802 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 18:48:26.470 | INFO     | src.decorators:wrapper:16 - my_function | (100, 50) | {}
+2025-04-01 18:48:26.470 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 18:48:26.470 | INFO     | src.decorators:wrapper:16 - my_function | (228, 228) | {}
+2025-04-01 18:48:26.471 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 18:48:26.471 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 18:48:26.471 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 18:48:26.471 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 18:48:26.471 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 18:48:42.748 | INFO     | src.decorators:wrapper:16 - my_function | (100, 50) | {}
+2025-04-01 18:48:42.748 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 18:48:42.748 | INFO     | src.decorators:wrapper:16 - my_function | (228, 228) | {}
+2025-04-01 18:48:42.748 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 18:48:42.748 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 18:48:42.748 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 18:48:42.748 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 18:48:42.748 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 19:04:30.748 | INFO     | src.decorators:wrapper:16 - my_function | (100, 50) | {}
+2025-04-01 19:04:30.748 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:06:25.264 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 19:06:25.264 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:06:25.264 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 19:06:25.264 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 19:08:25.200 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 19:08:25.201 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:08:25.201 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 19:08:25.201 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 19:09:20.351 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 19:09:20.351 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:09:20.351 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 19:09:20.351 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 19:10:31.231 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 19:10:31.231 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:10:31.231 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 19:10:31.231 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 19:13:00.874 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 19:13:00.874 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:13:00.874 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 19:13:00.874 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 19:15:04.133 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 19:15:04.133 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:15:04.133 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 19:15:04.133 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 19:16:21.474 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 19:16:21.474 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:16:21.474 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 19:16:21.474 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 19:16:21.478 | INFO     | src.decorators:wrapper:16 - my_function | (100, 50) | {}
+2025-04-01 19:16:21.478 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:17:25.640 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 19:17:25.640 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:17:25.641 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 19:17:25.641 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 19:17:25.647 | INFO     | src.decorators:wrapper:16 - my_function | (100, 50) | {}
+2025-04-01 19:17:25.647 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:18:29.587 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 19:18:29.587 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:18:29.587 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 19:18:29.587 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 19:18:29.591 | INFO     | src.decorators:wrapper:16 - my_function | (100, 50) | {}
+2025-04-01 19:18:29.591 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:20:27.842 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 19:20:27.842 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:20:27.842 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 19:20:27.842 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 19:20:27.845 | INFO     | src.decorators:wrapper:16 - my_function | (100, 50) | {}
+2025-04-01 19:20:27.845 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:21:21.518 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 19:21:21.518 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:21:21.518 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 19:21:21.518 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
+2025-04-01 19:21:21.522 | INFO     | src.decorators:wrapper:16 - my_function | (100, 50) | {}
+2025-04-01 19:21:21.522 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:25:49.769 | INFO     | src.decorators:wrapper:16 - my_function | (-1000, 5) | {}
+2025-04-01 19:25:49.769 | SUCCESS  | src.decorators:wrapper:18 - my_function | ok
+2025-04-01 19:25:49.769 | INFO     | src.decorators:wrapper:16 - my_function | (100, 0) | {}
+2025-04-01 19:25:49.769 | ERROR    | src.decorators:wrapper:21 - my_function error: | ZeroDivisionError Inputs: (100, 0) {}
