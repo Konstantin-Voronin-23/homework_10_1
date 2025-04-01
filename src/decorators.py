@@ -32,7 +32,7 @@ def log(filename: str | None = None) -> Callable[[F], F]:
 
 
 @log("logs.txt")
-def my_function(x: int, y: int) -> float:
+def number_divide(x: int, y: int) -> float:
     """Функция принимает на вход числа x и y, и проводит с ними операцию деления,
      отправляя на выход результат или ошибку"""
     return x / y
