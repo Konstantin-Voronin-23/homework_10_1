@@ -1,6 +1,6 @@
 import json
 
-def read_json_file(file_path="operations.json"):
+def read_json_file(file_path="operations.json") -> list[dict]:
     """Функция для чтения json файла с операциями транзакций"""
     try:
         with open("operations.json", "r", encoding="utf-8") as file:
