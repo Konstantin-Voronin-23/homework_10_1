@@ -1,17 +1,18 @@
 import os
+from typing import Dict, Union
+
 import requests
 from dotenv import load_dotenv
-from typing import Dict, Union
 
 load_dotenv()
 API_KEY = os.getenv('API_KEY')
-BASE_URL = os.getenv('BASE_URL')
+BASE_URL = os.getenv('BASE_URL', "https://example.com")
 
 
 def currency_conversion(transaction: Dict[str, Union[str, float]]) -> float:
     """Функция конвертации валюты из USD и EUR в рубли"""
     amount = transaction.get('amount', 0)
-    currency = transaction.get('currency', 'RUB')
+    currency = str(transaction.get('currency')) or 'RUB'
     if currency == "RUB":
         return float(amount)
     if currency not in ("USD", "EUR"):
@@ -25,7 +26,7 @@ def currency_conversion(transaction: Dict[str, Union[str, float]]) -> float:
         )
         response.raise_for_status()
 
-        rates = response.json()['rates']
+        rates: dict[str, float] = response.json()['rates']
         rub_rate = rates['RUB']
         return float(amount) * rub_rate
 

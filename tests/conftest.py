@@ -1,7 +1,6 @@
 from typing import Any, Dict, List, Optional, Union
 
 import pytest
-
 from loguru import logger
 
 

@@ -1,8 +1,8 @@
-from unittest.mock import Mock
-from unittest.mock import patch
+from unittest.mock import Mock, patch
+
 import pytest
-import requests
-from src.external_api import currency_conversion, API_KEY, BASE_URL
+
+from src.external_api import API_KEY, BASE_URL, currency_conversion
 
 
 @patch("src.external_api.requests.get")
