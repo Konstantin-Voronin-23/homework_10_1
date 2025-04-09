@@ -2,6 +2,8 @@ from typing import Any, Dict, List, Optional, Union
 
 import pytest
 
+from loguru import logger
+
 
 @pytest.fixture
 def card_basic() -> List[tuple[str, str]]:
@@ -219,3 +221,10 @@ def currency_average() -> list[dict]:
             "to": "Счет 98765432109876543210"
         }
     ]
+
+
+@pytest.fixture(autouse=True)
+def reset_logger():
+    logger.remove()
+    yield
+    logger.remove()
