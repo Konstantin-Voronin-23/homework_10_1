@@ -1,13 +1,15 @@
 import json
+from typing import List, Dict
 
-def read_json_file(file_path="operations.json") -> list[dict]:
+def read_json_file(file_path: str="operations.json") -> List[Dict]:
     """Функция для чтения json файла с операциями транзакций"""
     try:
-        with open("operations.json", "r", encoding="utf-8") as file:
-            return json.load(file)
+        with open(file_path, "r", encoding="utf-8") as file:
+            data = json.load(file)
+            return data if isinstance(data, list) else []
     except FileNotFoundError as error:
         print(f"Ошибка: файл {file_path} не найден! ")
-        return None
+        return []
     except json.JSONDecodeError:
         print(f"Ошибка: файл {file_path} содержит некорректный JSON! ")
-        return None
+        return []
