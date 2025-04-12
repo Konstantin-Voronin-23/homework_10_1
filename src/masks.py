@@ -1,7 +1,5 @@
 import logging
-import os
 from typing import Any, Dict, Optional, Union
-
 
 logger = logging.getLogger(__name__)
 file_handler = logging.FileHandler('../logs/masks.log', encoding="utf-8")
@@ -17,7 +15,7 @@ def get_mask_card_number(user_card: Optional[str]) -> Union[str, None]:
     """
     logger.info(f"Запуск функции маскировки номера банковской карты с аргументом: {user_card}")
     if not user_card:
-        logger.warning(f"Получен пустой номер карты")
+        logger.warning("Получен пустой номер карты")
         return None
 
     try:
@@ -45,7 +43,7 @@ def get_mask_account(user_account: Union[str, int, None, list, Dict[Any, Any], f
     """
     logger.info(f"Запуск функции маскировки номера банковского счета с аргументом: {user_account}")
     if user_account is None:
-        logger.warning(f"Получен пустой номер банковского счета")
+        logger.warning("Получен пустой номер банковского счета")
         return None
 
     try:
@@ -56,7 +54,7 @@ def get_mask_account(user_account: Union[str, int, None, list, Dict[Any, Any], f
 
         account_len = 20
         if len(user_account_string) != account_len:
-            logger.error(f"Длина бансковского счета не соответствует: {len(user_account_string)} - ожидалось {account_len}")
+            logger.error(f"Длина счета не соответствует: {len(user_account_string)} - ожидалось {account_len}")
             return None
 
         masked_account = f"**** **** **** **** {user_account_string[-4:]}"

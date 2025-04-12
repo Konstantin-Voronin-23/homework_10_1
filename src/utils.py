@@ -1,7 +1,6 @@
-import logging
 import json
+import logging
 from typing import Dict, List
-
 
 logger = logging.getLogger(__name__)
 file_handler = logging.FileHandler('logs/utils.log')
