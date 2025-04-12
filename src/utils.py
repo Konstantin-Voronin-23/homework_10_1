@@ -1,5 +1,14 @@
+import logging
 import json
 from typing import Dict, List
+
+
+logger = logging.getLogger(__name__)
+file_handler = logging.FileHandler('logs/utils.log')
+file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(file_formatter)
+logger.addHandler(file_handler)
+logger.setLevel(logging.DEBUG)
 
 
 def read_json_file(file_path: str = "operations.json") -> List[Dict]:
