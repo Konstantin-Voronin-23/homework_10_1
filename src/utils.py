@@ -1,16 +1,31 @@
 import json
+import logging
 from typing import Dict, List
 
+logger = logging.getLogger("utils")
+file_handler = logging.FileHandler('../logs/utils.log', encoding="utf-8")
+file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(file_formatter)
+logger.addHandler(file_handler)
+logger.setLevel(logging.DEBUG)
 
-def read_json_file(file_path: str = "operations.json") -> List[Dict]:
+
+def read_json_file(file_path: str = "../data/operations.json") -> List[Dict]:
     """Функция для чтения json файла с операциями транзакций"""
+    logger.info(f"Запуск функции для чтения json файла с аргументом: {file_path}")
     try:
         with open(file_path, "r", encoding="utf-8") as file:
             data = json.load(file)
-            return data if isinstance(data, list) else []
-    except FileNotFoundError:
-        print(f"Ошибка: файл {file_path} не найден! ")
+            logger.info(f"Успешное чтение JSON файла {file_path}")
+            if not isinstance(data, list):
+                logger.warning(f"Данные в файле {file_path} не являются списком, возвращаем пустой список")
+                return []
+            return data
+    except FileNotFoundError as error:
+        print(f"Ошибка: файл {error.filename} не найден! ")
+        logger.error(f"Ошибка, файл не найден {error}", exc_info=True)
         return []
-    except json.JSONDecodeError:
+    except json.JSONDecodeError as error:
         print(f"Ошибка: файл {file_path} содержит некорректный JSON! ")
+        logger.error(f"Ошибка: файл содержит некорректный JSON: {error}", exc_info=True)
         return []

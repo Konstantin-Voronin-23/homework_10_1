@@ -1,0 +1,9 @@
+2025-04-12 19:55:54,427 - __main__ - INFO - Запуск функции для чтения json файла с аргументом: operations.json
+2025-04-12 19:55:54,427 - __main__ - ERROR - Ошибка, файл не найден [Errno 2] No such file or directory: 'operations.json'
+Traceback (most recent call last):
+  File "C:\Users\Rendy\PycharmProjects\PythonProject1\src\utils.py", line 17, in read_json_file
+    with open(file_path, "r", encoding="utf-8") as file:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'operations.json'
+2025-04-12 19:57:31,550 - __main__ - INFO - Запуск функции для чтения json файла с аргументом: ../data/operations.json
+2025-04-12 19:57:31,551 - __main__ - INFO - Успешное чтение JSON файла ../data/operations.json
