@@ -10,7 +10,6 @@ def read_csv_file(file_path: str, delimiter: str = ";") -> List[Dict[str, Union[
 
     if not file_path:
         raise ValueError("Нужно указать путь к файлу")
-    result = []
 
     try:
         with open(file_path, "r", newline="", encoding="utf-8") as csv_file:
@@ -26,5 +25,18 @@ def read_csv_file(file_path: str, delimiter: str = ";") -> List[Dict[str, Union[
         print(f"Ошибка декодирования файла, попробуйте другую кодировку {error}")
 
 
-def read_excel_file(file_path: str):
-    pass
+def read_excel_file(file_path: str) -> List[Dict[str, Union[str, int, float]]]:
+    """Читает excel-файл.
+    Принимает на вход путь к excel файлу.
+    Возвращает список словарей, где ключ строка, а значение строка | целое число | дробное число"""
+
+    if not file_path:
+        raise ValueError("Нужно указать путь к файлу")
+
+    try:
+        df = pd.read_excel(file_path)
+        result_dict = df.to_dict(orient="records")
+        return result_dict
+
+    except Exception as error:
+        raise Exception(f"Ошибка при чтении Excel файла{file_path}: {str(error)}")
