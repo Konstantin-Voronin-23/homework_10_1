@@ -37,4 +37,4 @@ def read_excel_file(file_path: str) -> List[Dict[str, Union[Any]]]:
         return cast(List[Dict[str, Any]], df.to_dict(orient="records"))
 
     except Exception as error:
-        raise Exception(f"Ошибка при чтении Excel файла{file_path}: {str(error)}")
+        raise Exception(f"Ошибка при чтении Excel файла {file_path}: {str(error)}")
