@@ -14,7 +14,11 @@ def read_csv_file(file_path: str, delimiter: str = ";") -> List[Dict[str, Union[
 
     try:
         with open(file_path, "r", newline="", encoding="utf-8") as csv_file:
-            return list(csv.DictReader(csv_file, delimiter=delimiter))
+            return [
+                {k: v.strip() if isinstance(v, str) else v  # Очищаем пробелы
+                for k, v in row.items()}
+                for row in csv.DictReader(csv_file, delimiter=delimiter)
+            ]
 
     except FileNotFoundError as error:
         raise FileNotFoundError(f"Файл не найден {error}")
