@@ -106,6 +106,6 @@ def test_read_excel_file_invalid() -> None:
 
 
 def test_read_excel_file_empty() -> None:
-    """123"""
+    """Тест для проверки работы функции если excel файл пустой"""
     with pytest.raises(ValueError, match="Нужно указать путь к файлу"):
         read_excel_file("")
