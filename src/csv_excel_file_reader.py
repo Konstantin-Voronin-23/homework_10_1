@@ -16,7 +16,7 @@ def read_csv_file(file_path: str, delimiter: str = ";") -> List[Dict[str, Union[
         with open(file_path, "r", newline="", encoding="utf-8") as csv_file:
             return [
                 {k: v.strip() if isinstance(v, str) else v  # Очищаем пробелы
-                for k, v in row.items()}
+                 for k, v in row.items()}
                 for row in csv.DictReader(csv_file, delimiter=delimiter)
             ]
 

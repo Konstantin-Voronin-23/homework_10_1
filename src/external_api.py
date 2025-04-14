@@ -3,6 +3,7 @@ from typing import Dict, Union
 
 import requests
 from dotenv import load_dotenv
+from requests import RequestException
 
 load_dotenv()
 API_KEY = os.getenv('API_KEY')
@@ -14,22 +15,23 @@ def currency_conversion(transaction: Dict[str, Union[str, float]]) -> float:
     amount = transaction.get('amount', 0)
     currency = transaction.get('currency', 'RUB')
 
-    if not isinstance(amount, (int, float)):
-        raise ValueError(f"Некорректная сумма: {amount}")
+    try:
+        amount_float = float(amount)
+    except (TypeError, ValueError) as e:
+        raise ValueError(f"Некорректная сумма: {amount}") from e
 
     if currency == "RUB":
-        return float(amount)
+        return amount_float
 
     if currency not in ("USD", "EUR"):
         raise ValueError(f"Некорректная валюта {currency}")
 
     try:
         response = requests.get(
-            BASE_URL,
+            "https://api.apilayer.com/exchangerates_data/convert",
             params={
-                'from': currency,
-                'to': 'RUB',
-                'amount': amount
+                'base': currency,
+                'symbols': 'RUB'
             },
             headers={'apikey': API_KEY},
             timeout=10
@@ -37,12 +39,13 @@ def currency_conversion(transaction: Dict[str, Union[str, float]]) -> float:
         response.raise_for_status()
 
         data = response.json()
-        converted_amount = data.get('result')
 
-        if converted_amount is None:
+        if 'result' in data:
+            return float(data['result'])
+        elif 'rates' in data and 'RUB' in data['rates']:
+            return amount_float * float(data['rates']['RUB'])
+        else:
             raise ValueError(f"Некорректный ответ от API: {data}")
 
-        return float(converted_amount)
-
-    except requests.exceptions.RequestException as error:
-        raise ValueError(f"Ошибка при запросе курса валют: {error}") from error
+    except RequestException as error:
+        raise ValueError(f"Ошибка при запросе к API: {error}") from error

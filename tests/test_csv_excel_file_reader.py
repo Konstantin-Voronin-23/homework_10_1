@@ -1,16 +1,19 @@
-import csv
-import pandas as pd
+from unittest.mock import MagicMock, mock_open, patch
+
 import pytest
-from unittest.mock import mock_open, patch, MagicMock
-from src.csv_excel_file_reader import read_csv_file
-from src.csv_excel_file_reader import read_excel_file
+
+from src.csv_excel_file_reader import read_csv_file, read_excel_file
 
 
 def test_read_csv_file_valid() -> None:
     """Тест для проверки корректной работы функции """
-    csv_content = """id;state;date;amount;currency_name;currency_code;from;to;description
-    650703;EXECUTED;2023-09-05T11:30:32Z;16210;Sol;PEN;Счет 58803664561298323391;Счет 39745660563456619397;Перевод организации
-    3598919;EXECUTED;2020-12-06T23:00:58Z;29740;Peso;COP;Discover 3172601889670065;Discover 0720428384694643;Перевод с карты на карту"""
+    csv_content = (
+        "id;state;date;amount;currency_name;currency_code;from;to;description\n"
+        "650703;EXECUTED;2023-09-05T11:30:32Z;16210;Sol;PEN;"
+        "Счет 58803664561298323391;Счет 39745660563456619397;Перевод организации\n"
+        "3598919;EXECUTED;2020-12-06T23:00:58Z;29740;Peso;COP;"
+        "Discover 3172601889670065;Discover 0720428384694643;Перевод с карты на карту"
+    )
 
     expected = [
         {
