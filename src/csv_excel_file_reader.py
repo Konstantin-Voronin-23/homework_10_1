@@ -1,9 +1,10 @@
-import pandas as pd
 import csv
-from typing import Union, List, Dict
+from typing import Any, Dict, List, Union, cast
+
+import pandas as pd
 
 
-def read_csv_file(file_path: str, delimiter: str = ";") -> List[Dict[str, Union[str, int, float]]]:
+def read_csv_file(file_path: str, delimiter: str = ";") -> List[Dict[str, Union[Any]]]:
     """Читает CSV-файл.
     Принимает на вход путь к csv файлу и разделитель по умолчанию запятая.
     Возвращает список словарей, где ключ строка, а значение строка | целое число | дробное число """
@@ -13,19 +14,13 @@ def read_csv_file(file_path: str, delimiter: str = ";") -> List[Dict[str, Union[
 
     try:
         with open(file_path, "r", newline="", encoding="utf-8") as csv_file:
-            reader = csv.DictReader(csv_file, delimiter=delimiter)
-            for row in reader:
-                try:
-                    print(row)
-                except (ValueError, KeyError) as error:
-                    print(f"Ошибка обработки строки{row}: {error}")
+            return list(csv.DictReader(csv_file, delimiter=delimiter))
+
     except FileNotFoundError as error:
-        print(f"Файл не найден {error}")
-    except UnicodeDecodeError as error:
-        print(f"Ошибка декодирования файла, попробуйте другую кодировку {error}")
+        raise FileNotFoundError(f"Файл не найден {error}")
 
 
-def read_excel_file(file_path: str) -> List[Dict[str, Union[str, int, float]]]:
+def read_excel_file(file_path: str) -> List[Dict[str, Union[Any]]]:
     """Читает excel-файл.
     Принимает на вход путь к excel файлу.
     Возвращает список словарей, где ключ строка, а значение строка | целое число | дробное число"""
@@ -35,8 +30,7 @@ def read_excel_file(file_path: str) -> List[Dict[str, Union[str, int, float]]]:
 
     try:
         df = pd.read_excel(file_path)
-        result_dict = df.to_dict(orient="records")
-        return result_dict
+        return cast(List[Dict[str, Any]], df.to_dict(orient="records"))
 
     except Exception as error:
         raise Exception(f"Ошибка при чтении Excel файла{file_path}: {str(error)}")
