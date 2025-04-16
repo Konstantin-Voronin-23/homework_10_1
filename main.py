@@ -1,12 +1,13 @@
 # Импорты модулей
 from datetime import datetime
-from typing import List, Dict
-from src.processing import filter_by_state, sort_by_date
-from src.generators import filter_by_currency
-from src.filter_by_transactions import get_filter_by_string
-from  src.utils import read_json_file
+from typing import Dict, List
+
+from config import PATH_TO_CSV, PATH_TO_EXCEL, PATH_TO_JSON
 from src.csv_excel_file_reader import read_csv_file, read_excel_file
-from config import *
+from src.filter_by_transactions import get_filter_by_string
+from src.generators import filter_by_currency
+from src.processing import filter_by_state, sort_by_date
+from src.utils import read_json_file
 
 
 def get_user_choice(question: str, options: List[str]) -> str:
@@ -33,7 +34,7 @@ def ask_yes_no(question: str) -> bool:
         print("⚠️ Пожалуйста, введите 'да' или 'нет'")
 
 
-def print_transactions(transactions: List[Dict]):
+def print_transactions(transactions: List[Dict]) -> None:
     """Вывод транзакций в удобном формате"""
     if not transactions:
         print("\nНе найдено транзакций, соответствующих условиям")
@@ -87,7 +88,7 @@ def select_data_source() -> List[Dict]:
             print("Неверный ввод. Пожалуйста, выберите 1, 2 или 3")
 
 
-def main():
+def main() -> None:
     """Функции для запуска проекта"""
     transactions = select_data_source()
 
