@@ -1,11 +1,9 @@
 from typing import Any, Generator, Iterator
 
 
-def filter_by_currency(transactions: list[dict[str, Any]], currency: str = "USD") -> Iterator[dict[str, Any]]:
-    """Функция перебора списка словарей, она принимает на вход список словарей и возвращает,
-    итератор который выдает транзакции если они соответствуют заданной валюте"""
-
-    return (x for x in transactions if x["operationAmount"]["currency"]["name"] == currency)
+def filter_by_currency(transactions: list[dict[str, Any]], currency: str = "USD") -> list[dict[str, Any]]:
+    """Возвращает список транзакций в указанной валюте"""
+    return list(x for x in transactions if x["operationAmount"]["currency"]["code"] == currency)
 
 
 def transaction_descriptions(transactions: list[dict[str, Any]]) -> Iterator[str]:
