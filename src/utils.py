@@ -1,9 +1,11 @@
 import json
 import logging
+import os
 from typing import Dict, List
 
+log_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), "logs", "utils.log")
 logger = logging.getLogger("utils")
-file_handler = logging.FileHandler('../logs/utils.log', encoding="utf-8")
+file_handler = logging.FileHandler(log_file, encoding="utf-8")
 file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
