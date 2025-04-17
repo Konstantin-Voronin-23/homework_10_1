@@ -11,7 +11,7 @@ from src.utils import read_json_file
 
 
 def get_user_choice(question: str, options: List[str]) -> str:
-    """Получение выбора пользователя с валидацией"""
+    """Получение выбора пользователя"""
     while True:
         print(f"\n{question}")
         for i, option in enumerate(options, 1):

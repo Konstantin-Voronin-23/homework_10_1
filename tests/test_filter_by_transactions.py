@@ -101,7 +101,7 @@ def test_get_filter_by_category_valid() -> None:
 
 
 def test_get_filter_by_category_not_list_arg_1() -> None:
-    """Тест есть первый аргумент не является списком"""
+    """Тест если первый аргумент не является списком"""
 
     try:
         get_filter_by_category("not a list", ["перевод"])

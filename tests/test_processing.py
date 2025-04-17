@@ -1,5 +1,4 @@
-from typing import Dict, List, Union
-
+from typing import List, Union
 
 from src.processing import filter_by_state, sort_by_date
 

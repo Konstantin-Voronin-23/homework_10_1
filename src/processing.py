@@ -1,5 +1,5 @@
 # Создание функций проекта
-from typing import List, Dict, Any
+from typing import Any, Dict, List
 
 
 def filter_by_state(transactions: List[Dict], state: str = 'EXECUTED') -> List[Dict]:
