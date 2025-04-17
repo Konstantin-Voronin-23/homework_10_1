@@ -1,27 +1,25 @@
 # Создание функций проекта
-from typing import List
+from typing import List, Dict, Any
 
 
-def filter_by_state(my_list: List[dict], state: str = 'EXECUTED') -> List[dict]:
-    """
-    Функция фильтрации списков словарей по ключу
-    """
-    if not isinstance(my_list, list):
-        print("ожидается список транзакций")
+def filter_by_state(transactions: List[Dict], state: str = 'EXECUTED') -> List[Dict]:
+    """Фильтрация транзакций по статусу"""
+    if not isinstance(transactions, list):
         return []
 
-    try:
-        return [t for t in my_list if t.get('state') == state]
-    except AttributeError:
-        return []
+    return [t for t in transactions if isinstance(t, dict) and t.get('state') == state]
 
 
-def sort_by_date(my_list: List[dict], reversed_sorted: bool = True) -> List[dict]:
+def sort_by_date(my_list: List[Dict[str, Any]], reversed_sorted: bool = True) -> List[Dict[str, Any]]:
     """
     Функция сортировки даты по ключу
     """
     if not isinstance(my_list, list):
         print("ожидается список транзакций")
-        return
+        return []
 
-    return sorted(my_list, key=lambda date: date.get("date", 0), reverse=reversed_sorted)
+    def get_date_key(item: Dict[str, Any]) -> str:
+        date_str: str = item.get("date", "")
+        return date_str if date_str else "0000-00-00"
+
+    return sorted(my_list, key=get_date_key, reverse=reversed_sorted)
