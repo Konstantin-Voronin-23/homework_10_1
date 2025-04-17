@@ -408,3 +408,19 @@ FileNotFoundError: [Errno 2] No such file or directory: '../data/operations.json
 2025-04-17 01:15:02,238 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
 2025-04-17 22:15:36,570 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
 2025-04-17 22:15:36,581 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-18 00:30:21,760 - utils - INFO - Запуск функции для чтения json файла с аргументом: file.json
+2025-04-18 00:30:21,760 - utils - INFO - Успешное чтение JSON файла file.json
+2025-04-18 00:30:21,764 - utils - INFO - Запуск функции для чтения json файла с аргументом: fake.json
+2025-04-18 00:30:21,765 - utils - ERROR - Ошибка: файл содержит некорректный JSON: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Users\Rendy\PycharmProjects\PythonProject1\src\utils.py", line 20, in read_json_file
+    data = json.load(file)
+  File "C:\Users\Rendy\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rendy\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rendy\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
