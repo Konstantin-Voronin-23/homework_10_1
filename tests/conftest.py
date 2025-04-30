@@ -227,3 +227,14 @@ def reset_logger():
     logger.remove()
     yield
     logger.remove()
+
+
+@pytest.fixture
+def sample_transactions() -> List[dict]:
+    return [
+        {'id': 1, 'state': 'EXECUTED', 'date': '2023-10-01'},
+        {'id': 2, 'state': 'PENDING', 'date': '2023-09-15'},
+        {'id': 3, 'state': 'EXECUTED', 'date': '2023-10-01'},
+        {'id': 4, 'state': 'FAILED', 'date': '2023-08-25'},
+        {'id': 5, 'state': 'EXECUTED', 'date': '2023-09-20'},
+    ]

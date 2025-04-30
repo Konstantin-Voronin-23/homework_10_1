@@ -343,3 +343,102 @@ Traceback (most recent call last):
   File "C:\Users\Rendy\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
     raise effect
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-04-16 17:16:09,015 - utils - INFO - Запуск функции для чтения json файла с аргументом: file.json
+2025-04-16 17:16:09,015 - utils - INFO - Успешное чтение JSON файла file.json
+2025-04-16 17:16:09,019 - utils - INFO - Запуск функции для чтения json файла с аргументом: fake.json
+2025-04-16 17:16:09,019 - utils - ERROR - Ошибка: файл содержит некорректный JSON: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Users\Rendy\PycharmProjects\PythonProject1\src\utils.py", line 20, in read_json_file
+    data = json.load(file)
+  File "C:\Users\Rendy\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rendy\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rendy\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-04-16 23:47:40,116 - utils - INFO - Запуск функции для чтения json файла с аргументом: ../data/operations.json
+2025-04-16 23:47:40,117 - utils - ERROR - Ошибка, файл не найден [Errno 2] No such file or directory: '../data/operations.json'
+Traceback (most recent call last):
+  File "C:\Users\Rendy\PycharmProjects\PythonProject1\src\utils.py", line 19, in read_json_file
+    with open(file_path, "r", encoding="utf-8") as file:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../data/operations.json'
+2025-04-16 23:49:36,506 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-16 23:49:36,507 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-16 23:51:02,029 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-16 23:51:02,030 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:35:54,415 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:35:54,425 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:39:41,866 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:39:41,867 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:41:35,950 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:41:35,950 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:42:26,708 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:42:26,709 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:43:11,310 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:43:11,311 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:45:12,778 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:45:12,779 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:46:16,864 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:46:16,865 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:50:22,508 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:50:22,509 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:59:54,367 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 00:59:54,368 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:03:13,832 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:03:13,833 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:07:01,731 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:07:01,732 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:08:34,218 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:08:34,218 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:08:53,413 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:08:53,413 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:09:51,404 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:09:51,404 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:10:53,028 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:10:53,029 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:12:17,160 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:12:17,161 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:13:11,035 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:13:11,036 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:15:02,237 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 01:15:02,238 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 22:15:36,570 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-17 22:15:36,581 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-18 00:30:21,760 - utils - INFO - Запуск функции для чтения json файла с аргументом: file.json
+2025-04-18 00:30:21,760 - utils - INFO - Успешное чтение JSON файла file.json
+2025-04-18 00:30:21,764 - utils - INFO - Запуск функции для чтения json файла с аргументом: fake.json
+2025-04-18 00:30:21,765 - utils - ERROR - Ошибка: файл содержит некорректный JSON: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Users\Rendy\PycharmProjects\PythonProject1\src\utils.py", line 20, in read_json_file
+    data = json.load(file)
+  File "C:\Users\Rendy\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rendy\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rendy\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-04-18 00:40:59,925 - utils - INFO - Запуск функции для чтения json файла с аргументом: file.json
+2025-04-18 00:40:59,926 - utils - INFO - Успешное чтение JSON файла file.json
+2025-04-18 00:40:59,929 - utils - INFO - Запуск функции для чтения json файла с аргументом: fake.json
+2025-04-18 00:40:59,929 - utils - ERROR - Ошибка: файл содержит некорректный JSON: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Users\Rendy\PycharmProjects\PythonProject1\src\utils.py", line 20, in read_json_file
+    data = json.load(file)
+  File "C:\Users\Rendy\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rendy\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rendy\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-04-18 01:17:43,771 - utils - INFO - Запуск функции для чтения json файла с аргументом: C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
+2025-04-18 01:17:43,772 - utils - INFO - Успешное чтение JSON файла C:\Users\Rendy\PycharmProjects\PythonProject1\data\operations.json
